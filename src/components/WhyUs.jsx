@@ -17,8 +17,8 @@ const STATS = [
     description: 'Adaptadas a las necesidades específicas de cada cliente.',
   },
   {
-    number: 'CR + Virtual',
-    title: 'Atención flexible',
+    number: 'Flexible',
+    title: 'Atención',
     description: 'Presencial en Alajuela o reunión virtual, donde estés.',
   },
 ];

@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Linkedin, Instagram, Facebook } from 'lucide-react';
 import { AGENCY } from '../config/agency';
+import PrivacyModal from './PrivacyModal';
 
 const NAV_LINKS = [
   { href: '#inicio', label: 'Inicio' },
@@ -16,7 +18,11 @@ const SOCIAL_LINKS = [
 ];
 
 export default function Footer() {
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
   return (
+    <>
+    {privacyOpen && <PrivacyModal onClose={() => setPrivacyOpen(false)} />}
     <footer className="bg-dark-900 text-white" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -108,11 +114,11 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-white/40">
-            © 2025 imarketingcr. Todos los derechos reservados.
+            © 2026 imarketingcr. Todos los derechos reservados.
           </p>
           <button
             type="button"
-            onClick={() => alert('Política de privacidad — próximamente.')}
+            onClick={() => setPrivacyOpen(true)}
             className="text-xs text-white/40 underline underline-offset-2 transition-colors hover:text-white/70 focus-visible:rounded focus-visible:outline-2 focus-visible:outline-primary-400"
           >
             Política de privacidad
@@ -120,5 +126,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

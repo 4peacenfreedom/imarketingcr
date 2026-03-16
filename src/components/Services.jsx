@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Send, TrendingUp, Share2, Video, Palette, Briefcase } from 'lucide-react';
+import { Mail, Send, TrendingUp, Share2, Video, Palette, Briefcase, Globe } from 'lucide-react';
 
 const SERVICES = [
   {
@@ -66,6 +66,17 @@ const SERVICES = [
       'Material publicitario',
       'Diseño de piezas comerciales',
       'Imagen corporativa',
+    ],
+  },
+  {
+    icon: Globe,
+    title: 'Desarrollo Web y Soluciones Digitales',
+    description: 'Diseñamos y desarrollamos sitios web modernos, funcionales y orientados a resultados para fortalecer tu presencia digital.',
+    bullets: [
+      'Creación de páginas web corporativas y landing pages',
+      'Tiendas en línea (e-commerce)',
+      'Integraciones con plataformas y sistemas externos',
+      'Mantenimiento, soporte técnico y optimización web',
     ],
   },
   {
