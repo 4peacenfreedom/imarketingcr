@@ -79,7 +79,7 @@ export default function Hero() {
             className="mt-4 font-heading text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
             Hacemos crecer tu marca con{' '}
-            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text [-webkit-background-clip:text] text-transparent">
               estrategia, creatividad
             </span>{' '}
             y tecnología.
