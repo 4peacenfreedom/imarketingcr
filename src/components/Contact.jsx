@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, MessageCircle, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AGENCY } from '../config/agency';
+import PrivacyModal from './PrivacyModal';
 
 const SERVICES_OPTIONS = [
   'Estrategia de Email Marketing',
@@ -12,12 +13,14 @@ const SERVICES_OPTIONS = [
   'Producción Audiovisual',
   'Diseño Gráfico Profesional',
   'Imagen Corporativa y Material Promocional',
+  'Desarrollo Web y Soluciones Digitales',
   'No estoy seguro/a aún',
 ];
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
 
   const {
     register,
@@ -54,6 +57,8 @@ export default function Contact() {
   };
 
   return (
+    <>
+    {privacyOpen && <PrivacyModal onClose={() => setPrivacyOpen(false)} />}
     <section
       id="contacto"
       aria-labelledby="contact-heading"
@@ -278,7 +283,7 @@ export default function Contact() {
                       <button
                         type="button"
                         className="font-semibold text-primary-600 underline underline-offset-2 hover:text-primary-700 focus-visible:outline-2 focus-visible:outline-primary-500"
-                        onClick={() => alert('Política de privacidad — próximamente.')}
+                        onClick={() => setPrivacyOpen(true)}
                       >
                         política de privacidad
                       </button>
@@ -401,5 +406,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </>
   );
 }
